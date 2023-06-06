@@ -13,7 +13,7 @@
       <Icon v-else class="icon" icon="line-md:emoji-smile-wink" />
     </FunctionButton>
     <div style="flex-grow: 1"></div>
-    <FunctionButton :func-id="4" style="margin-bottom: 1.8rem">
+    <FunctionButton :func-id="4" style="margin-bottom: 1.8rem" @click="changeWin()">
       <Icon v-if="funcStore.funcId === 4" class="icon" icon="line-md:grid-3-twotone" />
       <Icon v-else class="icon" icon="line-md:grid-3" />
     </FunctionButton>
@@ -24,7 +24,15 @@
 import FunctionButton from './FunctionButton.vue'
 import { Icon } from '@iconify/vue'
 import { useFuncStore } from '../../stores/funcStore'
+import { useLogStore } from '../../stores/logStore'
 const funcStore = useFuncStore()
+const logStore = useLogStore()
+function changeWin(): void {
+  // console.log('changeWin')
+  logStore.changeLogged(1)
+  // 更改窗口大小
+  window.api.setWindowSizeLogin(300, 400)
+}
 </script>
 
 <style lang="less" scoped>

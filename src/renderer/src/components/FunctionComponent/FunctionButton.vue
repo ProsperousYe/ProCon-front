@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import { computed, reactive } from 'vue'
-import { useFuncStore } from '../../stores/funcStore';
+import { useFuncStore } from '../../stores/funcStore'
 
 const funcStore = useFuncStore()
 const props = defineProps({
@@ -24,12 +24,14 @@ const activeStyle = reactive({
 const inactiveStyle = reactive({
   backgroundColor: 'rgba(235, 228, 233, 0)'
 })
+
 function onClick(funcId: number | undefined): void {
   funcId && onChangeState(funcId)
 }
 function onChangeState(funcId: number): void {
   funcStore.changeFuncId(funcId)
 }
+
 const isActive = computed(() => {
   return funcStore.funcId === props.funcId
 })
