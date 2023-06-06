@@ -11,11 +11,12 @@ export const useFuncStore = defineStore({
   actions: {
     changeFuncId(funcId: number) {
       this.funcId = funcId
-    }
+    },
   },
   getters: {
     getFuncId(): number {
       return this.funcId
-    }
+    },
+
   }
 })

@@ -1,6 +1,5 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <div id="drag-bar"></div>
   <div class="container">
     <div id="column_left" class="column">
       <FunctionList />
@@ -14,7 +13,7 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import ChatWin from './ChatWin.vue'
 import ContactList from './ContactList.vue'
 import FunctionList from './FunctionComponent/FunctionList.vue'
@@ -40,13 +39,5 @@ import FunctionList from './FunctionComponent/FunctionList.vue'
 }
 #column_right {
   width: calc(100% - @left_width - @mid_width);
-}
-#drag-bar {
-  position: fixed;
-  top: 0px;
-  height: 1rem;
-  width: 100%;
-  opacity: 0;
-  -webkit-app-region: drag;
 }
 </style>
